@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: hellodotnetcore-container
-        image: hellodotnetcore:v2
+        image: hellodotnetcore:v3
         resources:
           limits:
             memory: "128Mi"
