@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellodotnetcore-deployment
+spec:
+  selector:
+    matchLabels:
+      app: hellodotnetcore-pod
+  template:
+    metadata:
+      labels:
+        app: hellodotnetcore-pod
+    spec:
+      containers:
+      - name: hellodotnetcore-container
+        image: hellodotnetcore.azurecr.io/hellodotnetcore:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        
